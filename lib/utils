@@ -46,6 +46,12 @@ function install_dotnet() {
   cp -r ${DOTNET_CACHE_LOCATION}/runtime ${BUILD_DIR}/.heroku/dotnet
 }
 
+function cleanup_dotnet() {
+  local BUILD_DIR="$1"
+  rm -rf /app/dotnet
+  rm -rf ${BUILD_DIR}/.heroku/dotnet
+}
+
 export_env_dir() {
   local env_dir=$1
   if [ -d "$env_dir" ]; then
