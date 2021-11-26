@@ -1,5 +1,7 @@
 # Heroku .NET Core Buildpack
 
+fork来的. 主要是吧.net core部署在heroku里面. 之所以修改这个脚本是因为如果一个solution中包含多个项目的时候. 这个脚本会搜索项目目录然后找到第一个包含start.cs program.cs的项目build. 但是我想要的是吧某些项目发布到静态页面的服务器只把api发布到heroku. 于是更改了脚本 需要在想要发布的项目里面加入一个.HerokuStart 的空文件以启动
+
 
 This is the [Heroku buildpack](https://devcenter.heroku.com/articles/buildpacks) for [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/).
 
